@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Official | Creating Memories Since 2022</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        warmWhite: '#FFF8F0',
+                        goldenYellow: '#FFB800',
+                        darkBlack: '#111111',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Before / After Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 420px;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        .slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .slider-after {
+            width: 50%;
+            z-index: 2;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #FFB800;
+            z-index: 3;
+            cursor: ew-resize;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: #FFB800;
+            color: #111;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-warmWhite text-darkBlack antialiased selection:bg-goldenYellow selection:text-darkBlack">
+
+    <!-- 1. HEADER SECTION -->
+    <header class="sticky top-0 z-50 bg-warmWhite/95 backdrop-blur-md border-b border-amber-200/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Tagline -->
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-goldenYellow rounded-2xl flex items-center justify-center shadow-md border border-amber-400">
+                    <i class="fa-solid fa-camera-retro text-darkBlack text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg sm:text-xl tracking-wide uppercase text-darkBlack leading-tight">Graphic Official</h1>
+                    <p class="text-xs text-neutral-600 font-medium">Creating Memories ✨❤️</p>
+                </div>
+            </div>
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/923186571916?text=Hi%20Graphic%20Official,%20I%20want%20to%20inquire%20about%20your%20services." 
+               target="_blank" 
+               class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg transition transform hover:scale-105 flex items-center space-x-2 text-sm sm:text-base">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span class="hidden sm:inline">+92 318 6571916</span>
+                <span class="sm:hidden">Chat Now</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-center lg:text-left">
+            <span class="inline-block bg-amber-200/70 text-amber-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider border border-amber-300">
+                Lahore, Pakistan • Since 2022
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-darkBlack leading-tight tracking-tight">
+                Apki Yaadein, Acrylic Me <span class="text-amber-600 underline decoration-goldenYellow">Hamesha Ke Liye</span>
+            </h2>
+            <p class="text-base sm:text-lg text-neutral-700 leading-relaxed">
+                Mother Standee, Couple Standee & Late Father ko Family Photo me Add Karna - <span class="font-semibold text-darkBlack">24 Hours Delivery</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+                <a href="#order-form" class="bg-goldenYellow hover:bg-amber-500 text-darkBlack font-bold px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Order on WhatsApp</span>
+                </a>
+                <a href="#services" class="bg-white hover:bg-neutral-100 text-darkBlack border border-neutral-300 font-semibold px-8 py-4 rounded-xl transition text-center shadow-sm">
+                    See Our Work
+                </a>
+            </div>
+        </div>
+        
+        <!-- Right Side: Mother Acrylic Standee Featured Image -->
+        <div class="flex justify-center">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-goldenYellow to-amber-400 rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-300"></div>
+                <div class="relative bg-white p-3 rounded-2xl shadow-xl border border-neutral-100">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600" alt="Mother Acrylic Standee Reference" class="rounded-xl w-full max-w-sm h-[420px] object-cover object-top shadow-md">
+                    <div class="absolute bottom-6 left-6 right-6 bg-black/75 backdrop-blur-md text-white text-center py-2.5 rounded-lg text-sm font-medium">
+                        Mother Acrylic Standee 🥺❤️
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION - 3 CARDS -->
+    <section id="services" class="bg-amber-50/60 py-16 sm:py-24 border-y border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-2xl sm:text-4xl font-bold text-darkBlack mb-3">Our Custom Creations</h2>
+                <p class="text-neutral-600 text-sm sm:text-base">Handcrafted with premium acrylic and detailed professional photo retouching.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-amber-100 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Single Acrylic Standee" class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-darkBlack text-warmWhite text-xs font-bold px-3 py-1 rounded-full">Standee</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-darkBlack mb-2">Single Acrylic Standee</h3>
+                            <p class="text-neutral-600 text-sm mb-4">"Maa, Baba, Doctor ka Standee" — Custom cut acrylic figures standing firm to preserve your beloved memories.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-neutral-100 mt-4">
+                        <span class="text-amber-700 font-extrabold text-lg">From Rs. 1,999</span>
+                        <a href="#order-form" onclick="selectService('Single Standee')" class="bg-goldenYellow hover:bg-amber-500 text-darkBlack font-semibold px-4 py-2 rounded-lg text-sm transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-amber-100 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600" alt="Couple Acrylic Standee" class="w-full h-full object-cover object-top transform hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-darkBlack text-warmWhite text-xs font-bold px-3 py-1 rounded-full">Couple</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-darkBlack mb-2">Couple Acrylic Standee</h3>
+                            <p class="text-neutral-600 text-sm mb-4">"Always & Forever" — Perfect anniversary or wedding gift to capture lifetime bonds in high-clarity acrylic.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-neutral-100 mt-4">
+                        <span class="text-amber-700 font-extrabold text-lg">From Rs. 2,999</span>
+                        <a href="#order-form" onclick="selectService('Couple Standee')" class="bg-goldenYellow hover:bg-amber-500 text-darkBlack font-semibold px-4 py-2 rounded-lg text-sm transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-amber-100 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600" alt="Family Portrait Editing" class="w-full h-full object-cover object-top transform hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-darkBlack text-warmWhite text-xs font-bold px-3 py-1 rounded-full">Editing</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-darkBlack mb-2">Family Portrait Editing</h3>
+                            <p class="text-neutral-600 text-sm mb-4">"4 Alag Photos se 1 Family Photo, Ya Late Father Add Karna" — Seamless professional blending with emotional touch.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-neutral-100 mt-4">
+                        <span class="text-amber-700 font-extrabold text-lg">From Rs. 1,500</span>
+                        <a href="#order-form" onclick="selectService('Family Portrait')" class="bg-goldenYellow hover:bg-amber-500 text-darkBlack font-semibold px-4 py-2 rounded-lg text-sm transition">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MAGIC BEFORE/AFTER SLIDER SECTION -->
+    <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-2xl mx-auto mb-12">
+            <span class="text-red-500 font-bold text-sm tracking-wide uppercase">Emotional Restoration</span>
+            <h2 class="text-2xl sm:text-4xl font-bold text-darkBlack mt-1 mb-3">Adding Late Father In Family Photo 🥺❤️</h2>
+            <p class="text-neutral-600 text-sm sm:text-base">Drag the slider left or right to see how we blend separate memories into one united family portrait.</p>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="slider-container" id="beforeAfterSlider">
+                <!-- Before Image (Left Layer / Background) -->
+                <div class="slider-image" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=700');">
+                    <span class="absolute bottom-4 left-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-md">Before (Separate/Original)</span>
+                </div>
+                <!-- After Image (Right Layer / Clipped) -->
+                <div class="slider-image slider-after" id="sliderAfter" style="background-image: url('https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=700');">
+                    <span class="absolute bottom-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-md">After (United Family)</span>
+                </div>
+                <!-- Interactive Handle -->
+                <div class="slider-handle" id="sliderHandle" style="left: 50%;">
+                    <div class="slider-button">
+                        <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CUSTOM ORDER FORM (MOST IMPORTANT) -->
+    <section id="order-form" class="bg-darkBlack text-warmWhite py-16 sm:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-goldenYellow text-xs sm:text-sm font-semibold uppercase tracking-widest">Instant WhatsApp Checkout</span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-warmWhite mt-2 mb-3">Apna Order Yahan Upload Karein</h2>
+                <p class="text-neutral-400 text-sm">Fill details below and click send. It will directly open WhatsApp with your order specifications!</p>
+            </div>
+
+            <form id="whatsappOrderForm" class="bg-neutral-900 border border-neutral-800 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-6">
+                <!-- Select Service -->
+                <div>
+                    <label for="serviceSelect" class="block text-sm font-medium text-neutral-300 mb-2">Select Service *</label>
+                    <select id="serviceSelect" required class="w-full bg-neutral-800 border border-neutral-700 text-warmWhite rounded-xl px-4 py-3.5 focus:outline-none focus:border-goldenYellow transition">
+                        <option value="" disabled selected>-- Choose your product/service --</option>
+                        <option value="Single Acrylic Standee">Single Acrylic Standee (From Rs. 1,999)</option>
+                        <option value="Couple Acrylic Standee">Couple Acrylic Standee (From Rs. 2,999)</option>
+                        <option value="Family Portrait Editing">Family Portrait Editing (From Rs. 1,500)</option>
+                    </select>
+                </div>
+
+                <!-- Size Selection -->
+                <div>
+                    <label for="sizeSelect" class="block text-sm font-medium text-neutral-300 mb-2">Select Size (For Standees)</label>
+                    <select id="sizeSelect" class="w-full bg-neutral-800 border border-neutral-700 text-warmWhite rounded-xl px-4 py-3.5 focus:outline-none focus:border-goldenYellow transition">
+                        <option value="Not Applicable / Portrait Edit">Not Applicable / Portrait Edit Only</option>
+                        <option value="Small - 5 inch">Small (5 inch)</option>
+                        <option value="Medium - 8 inch" selected>Medium (8 inch) - Most Popular</option>
+                        <option value="Large - 12 inch">Large (12 inch)</option>
+                    </select>
+                </div>
+
+                <!-- Upload Photo Drag & Drop Box -->
+                <div>
+                    <label class="block text-sm font-medium text-neutral-300 mb-2">Upload Reference Photos *</label>
+                    <div id="dropZone" class="border-2 border-dashed border-neutral-700 hover:border-goldenYellow rounded-xl p-8 text-center cursor-pointer bg-neutral-800/50 transition">
+                        <i class="fa-solid fa-cloud-arrow-up text-goldenYellow text-3xl mb-3"></i>
+                        <p class="text-sm font-medium text-neutral-200">Drag & drop your photos here, or <span class="text-goldenYellow underline">browse</span></p>
+                        <p class="text-xs text-neutral-400 mt-1">Multiple photos allowed (JPG, PNG). Note: You will send actual images directly inside WhatsApp chat after clicking send.</p>
+                        <input type="file" id="photoUpload" multiple accept="image/*" class="hidden">
+                    </div>
+                    <div id="fileList" class="mt-2 text-xs text-amber-400 font-medium"></div>
+                </div>
+
+                <!-- Your WhatsApp Number -->
+                <div>
+                    <label for="userWhatsapp" class="block text-sm font-medium text-neutral-300 mb-2">Your WhatsApp Number *</label>
+                    <input type="tel" id="userWhatsapp" required placeholder="e.g. 03001234567 or +92300..." class="w-full bg-neutral-800 border border-neutral-700 text-warmWhite rounded-xl px-4 py-3.5 focus:outline-none focus:border-goldenYellow transition">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg transition duration-200 flex items-center justify-center space-x-2 text-base sm:text-lg">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Send Order to WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. REVIEWS SECTION -->
+    <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-amber-600 font-semibold text-xs sm:text-sm uppercase tracking-widest">Happy Customers</span>
+            <h2 class="text-2xl sm:text-4xl font-bold text-darkBlack mt-1 mb-3">What Our Clients Say</h2>
+            <p class="text-neutral-600 text-sm sm:text-base">Real chat screenshots and heartfelt reactions from our valued customers.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-amber-100 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 text-amber-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-neutral-800 text-sm italic">
+                        "This is sooo cuteee Thank uh sooo much ❤️❤️"
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500">
+                    <span class="font-semibold text-darkBlack">Verified WhatsApp Order</span>
+                    <span>Lahore</span>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-amber-100 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 text-amber-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-neutral-800 text-sm italic">
+                        "Bht pyara standee mila, exact jesa socha tha. JazakAllah khair! ✨"
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500">
+                    <span class="font-semibold text-darkBlack">Verified WhatsApp Order</span>
+                    <span>Karachi</span>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-amber-100 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 text-amber-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-neutral-800 text-sm italic">
+                        "Mom ki yaad taza krdi apnay standee bna kr. Amazing quality! ❤️"
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500">
+                    <span class="font-semibold text-darkBlack">Verified WhatsApp Order</span>
+                    <span>Islamabad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER SECTION -->
+    <footer class="bg-neutral-900 text-neutral-400 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <h3 class="text-white font-bold text-lg tracking-wider uppercase mb-1">Graphic Official</h3>
+                <p class="text-sm">Creating Memories Since 2022 ✨❤️</p>
+                <p class="text-xs text-neutral-500 mt-2">📍 Location: Lahore, Pakistan</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-6 text-sm">
+                <a href="https://instagram.com/graphicofficial22" target="_blank" class="hover:text-goldenYellow transition flex items-center space-x-2">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>@graphicofficial22</span>
+                </a>
+                <a href="https://wa.me/923186571916" target="_blank" class="hover:text-goldenYellow transition flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>+92 318 6571916</span>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-neutral-800 text-center text-xs text-neutral-600">
+            &copy; 2026 Graphic Official. All rights reserved. Designed for Instagram Visitors & WhatsApp Conversions.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR FUNCTIONALITY -->
+    <script>
+        // 1. Before/After Interactive Slider Logic
+        const slider = document.getElementById('beforeAfterSlider');
+        const sliderAfter = document.getElementById('sliderAfter');
+        const sliderHandle = document.getElementById('sliderHandle');
+
+        let isDragging = false;
+
+        function updateSlider(clientX) {
+            const rect = slider.getBoundingClientRect();
+            let x = clientX - rect.left;
+            
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            
+            const percent = (x / rect.width) * 100;
+            sliderAfter.style.width = percent + '%';
+            sliderHandle.style.left = percent + '%';
+        }
+
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateSlider(e.clientX);
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateSlider(e.clientX);
+        });
+
+        slider.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        // 2. Quick Service Select Helper
+        function selectService(serviceName) {
+            const selectElem = document.getElementById('serviceSelect');
+            for (let i = 0; i < selectElem.options.length; i++) {
+                if (selectElem.options[i].value === serviceName) {
+                    selectElem.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // 3. File upload display file names
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('photoUpload');
+        const fileList = document.getElementById('fileList');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                let names = [];
+                for (let file of fileInput.files) {
+                    names.push(file.name);
+                }
+                fileList.textContent = `Selected: ${names.join(', ')} (${fileInput.files.length} file(s))`;
+            }
+        });
+
+        // 4. WhatsApp Form Submission Handler
+        document.getElementById('whatsappOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const service = document.getElementById('serviceSelect').value;
+            const size = document.getElementById('sizeSelect').value;
+            const userWhatsapp = document.getElementById('userWhatsapp').value;
+            const fileCount = fileInput.files.length;
+
+            if (!service) {
+                alert('Please select a service.');
+                return;
+            }
+
+            let message = `Hello Graphic Official! ✨ I want to place an order:%0A%0A`;
+            message += `• *Service:* ${service}%0A`;
+            message += `• *Size:* ${size}%0A`;
+            message += `• *My WhatsApp:* ${userWhatsapp}%0A`;
+            message += `• *Attached Photos:* ${fileCount > 0 ? fileCount + ' photo(s) selected (Will send directly in chat)' : 'Will share photos in chat'}%0A%0A`;
+            message += `Please guide me on the next steps!`;
+
+            const phoneNumber = '923186571916';
+            const waUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(waUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
